@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Multi-step form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <ul>
+          <li aria-valuetext="0">
+            <p id="info">1</p>
+            <div>
+              <p>STEP 1</p>
+              <p>YOUR INFO</p>
+            </div>
+          </li>
+          <li aria-valuetext="1">
+            <p id="plan">2</p>
+            <div>
+              <p>STEP 2</p>
+              <p>SELECT PLAN</p>
+            </div>
+          </li>
+          <li aria-valuetext="2">
+            <p id="pick">3</p>
+            <div>
+              <p>STEP 3</p>
+              <p>ADD-ONS</p>
+            </div>
+          </li>
+          <li aria-valuetext="3">
+            <p id="finish">4</p>
+            <div>
+              <p>STEP 4</p>
+              <p>SUMMARY</p>
+            </div>
+          </li>
+        </ul>
+      </header>
+      <form reqired>
+        <section class="content">
+          <section aria-valuetext="info" class="info">
+            <header>
+              <h2>Personal info</h2>
+              <p>Please provide your name, email address, and phone number.</p>
+            </header>
+            <div id="data">
+              <label for="name"
+                >Name
+
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="e.g. Stephen King"
+                  required />
+              </label>
+              <label for="email"
+                >Email Address
+
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="e.g. stephenking@lorem.com"
+                  required />
+              </label>
+              <label for="number"
+                >Phone Number
+                <input
+                  id="number"
+                  type="tel"
+                  placeholder="e.g. +1 234 567 890"
+                  required />
+              </label>
+            </div>
+          </section>
+          <section aria-valuetext="plan" class="plan ghost">
+            <header>
+              <h2>Select your plan</h2>
+              <p>You have the option of mothly or yearly billing</p>
+            </header>
+            <div>
+              <div class="pick_plan">
+                <button
+                  name="Arcade"
+                  type="button"
+                  id="pick-plan-btn"
+                  aria-checked="true"
+                  value="$9/mo"
+                  class="pick_plan_active">
+                  <img src="images/icon-arcade.svg" alt="arcade icon" />
+                  <div>
+                    <h3>Arcade</h3>
+                    <p id="ofert">$9/mo</p>
+                    <p id="yearly" class="ghost">2 months free</p>
+                  </div>
+                </button>
+                <button
+                  name="Advanced"
+                  type="button"
+                  id="pick-plan-btn"
+                  aria-checked="undefined"
+                  value="$12/mo">
+                  <img src="images/icon-advanced.svg" alt="advanced icon" />
+                  <div>
+                    <h3>Advanced</h3>
+                    <p id="ofert">$12/mo</p>
+                    <p id="yearly" class="ghost">2 months free</p>
+                  </div>
+                </button>
+                <button
+                  name="Pro"
+                  type="button"
+                  id="pick-plan-btn"
+                  aria-checked="undefined"
+                  value="$15/mo">
+                  <img src="images/icon-pro.svg" alt="pro icon" />
+                  <div>
+                    <h3>Pro</h3>
+                    <p id="ofert">$15/mo</p>
+                    <p id="yearly" class="ghost">2 months free</p>
+                  </div>
+                </button>
+              </div>
+              <div class="or">
+                <p>Monthly</p>
+                <button type="button" id="btn-switch" class="switch">
+                  <p id="circle"></p>
+                </button>
+                <p>Yearly</p>
+              </div>
+            </div>
+          </section>
+          <section
+            id="#pick-conteiner"
+            aria-valuetext="pick"
+            class="pick ghost">
+            <header>
+              <h2>Pick add-ons</h2>
+              <p>Add-ons help enhance your gaming experience.</p>
+            </header>
+            <div id="pick-label">
+              <label for="online">
+                <div>
+                  <h3>Online service</h3>
+                  <p>Access to multiplayer games</p>
+                </div>
+
+                <p id="choice-ofert" class="choiced_plan">+$1/mo</p>
+                <input
+                  type="checkbox"
+                  name="Online service"
+                  value="+$1/mo"
+                  id="online" />
+              </label>
+              <label for="larger">
+                <div>
+                  <h3>Larger storage</h3>
+                  <p>Extra 1TB of cloud save</p>
+                </div>
+                <p id="choice-ofert" class="choiced_plan">+$2/mo</p>
+
+                <input
+                  type="checkbox"
+                  name="Larger storage"
+                  value="+$2/mo"
+                  id="larger" />
+              </label>
+              <label for="customizable">
+                <div>
+                  <h3>Customizable Profile</h3>
+                  <p>custom them on your profile</p>
+                </div>
+                <p id="choice-ofert" class="choiced_plan">+$2/mo</p>
+                <input
+                  type="checkbox"
+                  name="Customizable Profile"
+                  value="+$2/mo"
+                  id="customizable" />
+              </label>
+            </div>
+          </section>
+          <section aria-valuetext="finish" class="finish ghost">
+            <header>
+              <h2>Finishing up</h2>
+              <p>Double-check everything looks OK before confirming.</p>
+            </header>
+            <div>
+              <div>
+                <div class="conteiner_for_plan">
+                  <h3 id="plan-name"></h3>
+                  <p class="all-price" id="price"></p>
+                  <a id="link-to-pick" href="#pick-conteiner">Change</a>
+                </div>
+                <hr />
+                <div id="plan-bonus" class="current_bonus"></div>
+              </div>
+              <div>
+                <p id="fina-price-container"></p>
+                <p id="fina-price"></p>
+              </div>
+            </div>
+          </section>
+          <section class="thanks ghost">
+            <img src="images/icon-thank-you.svg" alt="Thank you for all!" />
+            <h1>Thank you!</h1>
+            <p>
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
+            </p>
+          </section>
+        </section>
+        <div class="control_panel">
+          <button type="button" id="backward" class="vanish back">
+            Go Back
+          </button>
+          <button type="button" id="forward">Next Step</button>
+        </div>
+      </form>
+    </main>
+    <script src="scirpt.js"></script>
+  </body>
+</html>
